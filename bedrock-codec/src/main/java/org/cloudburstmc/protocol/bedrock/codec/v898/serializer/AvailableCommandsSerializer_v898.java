@@ -58,7 +58,7 @@ public class AvailableCommandsSerializer_v898 extends AvailableCommandsSerialize
         String name = helper.readString(buffer);
         String description = helper.readString(buffer);
         Set<CommandData.Flag> flags = this.readFlags(buffer);
-        CommandPermission permissions = PERMISSIONS[PERMISSION_LEVEL.indexOf(helper.readString(buffer))];
+        CommandPermission permissions = PERMISSIONS[PERMISSION_LEVEL.indexOf(helper.readString(buffer).toLowerCase())];
         int aliasIndex = buffer.readIntLE();
         CommandEnumData aliases = aliasIndex == -1 ? null : enums.get(aliasIndex);
 
